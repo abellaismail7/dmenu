@@ -10,13 +10,26 @@ static const char *fonts[] = {
 	"Twitter Color Emoji:style=Regular:pixelsize=30:antialias=true:autohint=true"
 
 };
+static const unsigned int bgalpha = 0xff;
+static const unsigned int fgalpha = OPAQUE;
+
 static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
 static const char *colors[SchemeLast][2] = {
 	/*     fg         bg       */
-	[SchemeNorm] = { "#e0fbfc", "#2E3440" },
-	[SchemeSel] = { "#292f36", "#fcba03" },
-	[SchemeOut] = { "#D8DEE9", "#00ffff" },
+	[SchemeNorm] = { "#e0fbfc", "#192025" },
+	[SchemeSel]  = { "#192025", "#2596BE" },
+	[SchemeOut]  = { "#D8DEE9", "#00ffff" },
 };
+
+static const unsigned int alphas[SchemeLast][2] = {
+	/*		fgalpha		bgalphga	*/
+	[SchemeNorm] = { fgalpha, bgalpha },
+	[SchemeSel] = { fgalpha, bgalpha },
+	[SchemeOut] = { fgalpha, bgalpha },
+};
+
+
+
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
 static unsigned int lines      = 0;
 /* -h option; minimum height of a menu line */
@@ -30,4 +43,4 @@ static unsigned int min_lineheight = 8;
 static const char worddelimiters[] = " ";
 
 /* Size of the window border */
-static const unsigned int border_width = 5;
+static const unsigned int border_width = 0;
